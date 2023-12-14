@@ -1,0 +1,29 @@
+.App-info{
+    display: flex;
+    justify-content: flex-start;
+    column-gap: 40px;
+    width: 47%;
+}
+
+.App-info p{
+    color: #C0C0C0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.App-info ul li a{
+    color: #FFF;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    
+}
+
+.App-info .App-areas, .App-info .App-pages, .App-info ul{
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}

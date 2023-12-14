@@ -1,0 +1,7 @@
+.App-contact{
+    display: flex;
+    column-gap: 20px;
+    width: 47%;
+    justify-content: flex-start;
+    align-items: first baseline;
+}
