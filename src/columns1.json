@@ -1,0 +1,18 @@
+[
+    {
+        "label": "Full Name", 
+        "key": "full_name"
+    },
+    {
+        "label": "Gender",
+        "key": "gender"
+    },
+    {
+        "label": "Age",
+        "key": "age"
+    },
+    {
+        "label": "Email", 
+        "key": "email"
+    }
+]
