@@ -1,3 +1,4 @@
+import './FormUsers.css'
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { ADD_USER } from "../../store/userReducer";
@@ -59,9 +60,9 @@ export const FormUsers = () => {
   };
 
   return (
-    <div>
+    <div className='form-container'>
       <form onSubmit={addNewUser} className="form-user">
-        <div>
+        
           <p>Name:</p>
           <input value={userName} onChange={handleChangeName} />
           <p>Nik:</p>
@@ -72,9 +73,9 @@ export const FormUsers = () => {
             <input value={addressCity} onChange={handleChangeCity} />
             <p>Street:</p>
             <input value={addressStreet} onChange={handleChangeStreet} />
-        </div>
+
         <div>
-          <button type="submit">Create new Profile</button>
+          <button>Create new Profile</button>
         </div>
       </form>
     </div>
