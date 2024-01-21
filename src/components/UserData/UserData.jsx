@@ -4,7 +4,7 @@ import { Person } from "../Person/Person"
 export const UserData = () => {
     const persons = useSelector(state => state.users.users)
 
-    if (!persons || persons.lenght === 0) return <p>Нет данных.</p>
+    if (!persons || persons.lenght === 0) return <p>Нет данных.</p>;
 
     return (
         <div className="table_container">
@@ -20,9 +20,9 @@ export const UserData = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {persons.map((person, index) => {
+                    {persons.map((person, index) => (
                         <Person person={person} key={person.id} index={index}/>
-                    })}
+                    ))}
                 </tbody>
             </table>
         </div>

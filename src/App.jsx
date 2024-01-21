@@ -24,7 +24,7 @@ function App() {
   return (
     <div className='app'>
       <FormUsers />
-      {appState.loading ? (
+      {appState ? (
         <h1>Подождите, данные загружаются!</h1>
       ) : (
         <UserData />
