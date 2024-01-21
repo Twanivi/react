@@ -1,35 +1,19 @@
 import { useState } from 'react';
 import { TableHead } from './TableHead/TableHead';
 import { TableBody } from './TableBody/TableBody';
-import tableData1 from '../../tableData1.json';
-import columns1 from '../../columns1.json';
-import './Table.css'
+import './Table.css';
+import { useSortableTable } from '../../useSortableTable';
 
 
-export const Table = () => {
 
-    const [tableData, setTableData] = useState(tableData1);
 
-    const [columns, setColumns] = useState(columns1);
+export const Table = ({columns, data}) => {
 
-    const handleSortData1 = () => {
-        setTableData(prevState => prevState.sort((a, b) => a.name.localeCompare(b.name)))
-    }
-
-    const handleSortData3 = () => {
-        setTableData(prevState => prevState.sort((a, b) => a.age.toString().localeCompare(b.age.toString(), 'en', {numeric: true
-        })))
-    }
-
-    
-
-    // setColumns({
-    //     data: 
-    // })
+    const [tableData, handleSorting] = useSortableTable(data, columns);
 
     return (
         <table className='table'>
-            <TableHead columns={columns} />
+            <TableHead columns={columns} handleSorting={handleSorting}/>
             <TableBody columns={columns} tableData={tableData} />
         </table>
     )
