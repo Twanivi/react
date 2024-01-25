@@ -1,7 +1,7 @@
 import "./FormUsers.css";
 import { useState } from "react";
 
-export const FormUsers = ({users, setUsers}) => {
+export const FormUsers = ({ addUser }) => {
   const [userId, setUserId] = useState(10);
   const [userName, setUserName] = useState("");
   const [userNik, setUserNik] = useState("");
@@ -9,28 +9,24 @@ export const FormUsers = ({users, setUsers}) => {
   const [addressCity, setAddressCity] = useState("");
   const [addressStreet, setAddressStreet] = useState("");
 
-  const addUser = (newUser) => {
-    setUsers([...users, newUser])
-  }
-
   const addNewUser = (event) => {
     event.preventDefault();
-    setUserId(prevState => ++prevState);
+    setUserId((prevState) => ++prevState);
     const newUser = {
       id: userId,
-        name: userName,
-        username: userNik,
-        email: userEmail,
-        address: {
-          city: addressCity,
-          street: addressStreet,
-        }
-    }
+      name: userName,
+      username: userNik,
+      email: userEmail,
+      address: {
+        city: addressCity,
+        street: addressStreet,
+      },
+    };
     addUser(newUser);
     setUserName("");
     setUserNik("");
     setUserEmail("");
-    setAddressCity(""); 
+    setAddressCity("");
     setAddressStreet("");
   };
 
@@ -55,18 +51,18 @@ export const FormUsers = ({users, setUsers}) => {
   };
 
   return (
-    <div className='form-container'>
+    <div className="form-container">
       <form onSubmit={addNewUser} className="form-user">
-          <p>Name:</p>
-          <input value={userName} onChange={handleChangeName} />
-          <p>Nik:</p>
-          <input value={userNik} onChange={handleChangeNik} />
-          <p>Email:</p>
-          <input value={userEmail} onChange={handleChangeEmail} />
-          <p>City:</p>
-            <input value={addressCity} onChange={handleChangeCity} />
-            <p>Street:</p>
-            <input value={addressStreet} onChange={handleChangeStreet} />
+        <p>Name:</p>
+        <input value={userName} onChange={handleChangeName} />
+        <p>Nik:</p>
+        <input value={userNik} onChange={handleChangeNik} />
+        <p>Email:</p>
+        <input value={userEmail} onChange={handleChangeEmail} />
+        <p>City:</p>
+        <input value={addressCity} onChange={handleChangeCity} />
+        <p>Street:</p>
+        <input value={addressStreet} onChange={handleChangeStreet} />
         <div>
           <button>Create new Profile</button>
         </div>

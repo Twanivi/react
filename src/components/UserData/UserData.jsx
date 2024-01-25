@@ -1,6 +1,8 @@
-export const UserData = ({ persons, newUsersData }) => {
+export const UserData = (props) => {
 
-  if (!persons || persons.lenght === 0) return <p>Нет данных.</p>;
+  const {persons, users} = props
+
+  if (!persons || persons.lenght === 0 && !users) return <p>Нет данных.</p>;
 
   return (
     <div className="table_container">
@@ -24,7 +26,6 @@ export const UserData = ({ persons, newUsersData }) => {
               <td>{`${person.address.city}, ${person.address.street}`}</td>
             </tr>
           ))}
-          <tr>{newUsersData}</tr>
         </tbody>
       </table>
     </div>
