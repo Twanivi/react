@@ -3,19 +3,22 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { UserData } from "./components/UserData/UserData";
 import { FormUsers } from "./components/FormUsers/FormUsers";
-import { UsersList } from "./components/UserList/UserList";
+// import {InfoUser} from "./components/InfoUser/InfoUser";
 
 function App() {
-  const [users, setUsers] = useState([]);
-
-  const addUser = (newUser) => {
-    setUsers([...users, newUser]);
-}
-
   const [appState, setAppState] = useState({
     loading: false,
     persons: null,
+    row: null
   });
+
+  const addUser = (newUser) => {
+    setAppState((prevState) => ({
+      loading: prevState.loading,
+      persons: [...prevState.persons, newUser],
+      row: prevState.row
+    }));
+}
 
   useEffect(() => {
     setAppState({ loading: true });
@@ -25,9 +28,9 @@ function App() {
       setAppState({
         loading: false,
         persons: allPersons,
+        row: null
       });
     });
-    setUsers(newUser)
   }, [setAppState]);
 
   
@@ -38,9 +41,8 @@ function App() {
       {appState.loading ? (
         <h1>Подождите, данные загружаются!</h1>
       ) : (
-        <UserData persons={appState.persons} />
-      )}
-      <UsersList users={users}/>
+        <UserData persons={appState.persons} setAppState={setAppState}/>
+      )} 
     </div>
   );
 }

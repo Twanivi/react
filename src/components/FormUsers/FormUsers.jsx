@@ -13,7 +13,7 @@ export const FormUsers = ({ addUser }) => {
     event.preventDefault();
     setUserId((prevState) => ++prevState);
     const newUser = {
-      id: userId,
+      id: userId + 1,
       name: userName,
       username: userNik,
       email: userEmail,
