@@ -1,0 +1,40 @@
+.form-container{
+    max-width: 1500px;
+    padding: 50px 0;
+}
+
+.form-user{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+p{
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.form-user input{
+    width: 12%;
+    padding: 10px;
+    border: 2px solid black;
+    outline-style: none;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.548);
+    font-size: 14px;
+}
+
+button{
+    padding: 10px;
+    background: lightcyan;
+    border: 2px solid black;
+    outline-style: none;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.548);
+    font-size: 14px;
+    color: blue;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: rgb(26, 1, 172);
+    color: aquamarine;
+}

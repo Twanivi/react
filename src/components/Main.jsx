@@ -1,19 +1,19 @@
-import React, { useEffect, useState} from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { usersService } from "./usersService";
 import { UsersList } from "./UsersList";
-import { UserForm } from "./UserForm";
-
+import { UserForm } from "./UserForm/UserForm";
+import { UserCompanyContext } from "../context/UserCompanyContext";
 
 export const Main = () => {
-    const [users, setUsers] = useState([]);
+    const {userCom, setUserCom} = useContext(UserCompanyContext);
 
     const addUser = (newUser) => {
-        setUsers([...users, newUser]);
+        setUserCom([...userCom, newUser]);
     }
 
     async function getUsersFromServer() {
-        const newUsers = await usersService.getAllUsers();
-        setUsers(newUsers)
+        const getUsers = await usersService.getAllUsers();
+        setUserCom(getUsers)
     }
 
     useEffect(() => {
@@ -21,9 +21,13 @@ export const Main = () => {
     }, [])
 
     return (
-        <div className="main">
-            <UserForm addUser={addUser} /> 
-            <UsersList users={users} />
+        <div className='main'>
+            <div>
+                <UserForm addUser={addUser} />
+            </div>
+             <div>
+                <UsersList userCom={userCom} />
+             </div>
         </div>
     )
 }

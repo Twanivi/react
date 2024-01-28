@@ -10,6 +10,14 @@ body {
     sans-serif;
 }
 
+.light{
+  background-color: white;
+}
+
+.dark{
+  background-color: rgba(128, 128, 128, 0.575);
+}
+
 /* 
 =================
 Table
@@ -85,4 +93,56 @@ th.down {
 
 .table tbody tr:nth-child(2n) td {
   background: #fff;
+}
+
+.card-wrapper{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 50px;
+}
+
+.card-wrapper .card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  column-gap:20px
+}
+
+.card-wrapper .card p{
+  width: 20%;
+}
+
+.card-wrapper .card .title{
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.home-page{
+  font-size: 30px;
+}
+
+.about-us-page{
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 50px 0;
+}
+
+.wrapper-about-us{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 50px 0;
+  flex-flow: row wrap;
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.wrapper-about-us .card-about-us {
+  width: 40%;
+  text-align: right;
 }

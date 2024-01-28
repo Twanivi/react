@@ -1,7 +1,7 @@
 import { CustomLink } from "./CustomLink";
 
 
-export const Users = ({user, ...props}) => {
+export const Users = ({user}) => {
     return (
         <div className="users">
             <div className="table_container">
@@ -27,10 +27,9 @@ export const Users = ({user, ...props}) => {
           </tbody>
         </table>
       </div>
-        
 
             <div className="user-btn">
-                <CustomLink to={'users/:id'} text='View User' />
+                <CustomLink path={`/users/${user.id}`} text='View User' />
             </div>
         </div>
     )

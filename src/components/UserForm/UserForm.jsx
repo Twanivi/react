@@ -1,6 +1,5 @@
-import { Button } from "./Button/Button";
-import { Input } from "./Input/Input";
 import { useState } from "react";
+import './UserForm.css'
 
 export const UserForm = ({ addUser }) => {
   const [userId, setUserId] = useState(10);
@@ -12,7 +11,7 @@ export const UserForm = ({ addUser }) => {
 
   const addNewUser = (event) => {
     event.preventDefault();
-    setUserId(prevState => ++prevState);
+    setUserId((prevState) => ++prevState);
     const newUser = {
       id: userId,
       name: userName,
@@ -23,11 +22,11 @@ export const UserForm = ({ addUser }) => {
         street: addressStreet,
       },
     };
-    addUser(newUser)
+    addUser(newUser);
     setUserName("");
     setUserNik("");
     setUserEmail("");
-    setAddressCity(""); 
+    setAddressCity("");
     setAddressStreet("");
   };
 
@@ -51,21 +50,21 @@ export const UserForm = ({ addUser }) => {
     setAddressStreet(event.target.value);
   };
 
-  <div className='form-container'>
-      <form onSubmit={addNewUser} className="form-user">
-          <p>Name:</p>
-          <Input value={userName} onChange={handleChangeName} />
-          <p>Nik:</p>
-          <Input value={userNik} onChange={handleChangeNik} />
-          <p>Email:</p>
-          <Input value={userEmail} onChange={handleChangeEmail} />
-          <p>City:</p>
-            <Input value={addressCity} onChange={handleChangeCity} />
-            <p>Street:</p>
-            <Input value={addressStreet} onChange={handleChangeStreet} />
-        <div>
-          <Button text='Create new Profile'></Button>
-        </div>
-      </form>
-    </div>
+  <div className="form-container">
+    <form className="form-user" onSubmit={addNewUser}>
+      <p>Name:</p>
+      <input value={userName} onChange={handleChangeName} />
+      <p>Nik:</p>
+      <input value={userNik} onChange={handleChangeNik} />
+      <p>Email:</p>
+      <input value={userEmail} onChange={handleChangeEmail} />
+      <p>City:</p>
+      <input value={addressCity} onChange={handleChangeCity} />
+      <p>Street:</p>
+      <input value={addressStreet} onChange={handleChangeStreet} />
+      <div>
+        <button>Create new Profile</button>
+      </div>
+    </form>
+  </div>;
 };

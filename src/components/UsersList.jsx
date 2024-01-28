@@ -1,9 +1,9 @@
 import { Users } from "./Users"
 
-export const UsersList = ({users}) => {
+export const UsersList = ({userCom}) => {
     return (
         <div>
-            {users.map((user) => {
+            {userCom.map((user) => {
                 return <Users user={user} key={user.id}/>
             })}
         </div>
